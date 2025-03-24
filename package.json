@@ -2,7 +2,7 @@
   "name": "faydonk.dev",
     "private": true,
   "scripts": {
-    "dev": "serve src",
+    "dev": "serve public",
     "deploy": "vercel deploy --prod"
   },
   "devDependencies": {
