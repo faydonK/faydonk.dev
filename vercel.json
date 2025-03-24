@@ -2,7 +2,15 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
+  "routes": [
+    { "handle": "filesystem" },
+    {
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "/404.html"
+    }
+],
+"redirects": [
     {
       "source": "/twitch",
       "destination": "https://www.twitch.tv/faydonKwin",
