@@ -9,8 +9,8 @@
       "status": 404,
       "dest": "/404.html"
     }
-],
-"redirects": [
+  ],
+  "redirects": [
     {
       "source": "/twitch",
       "destination": "https://www.twitch.tv/faydonKwin",
