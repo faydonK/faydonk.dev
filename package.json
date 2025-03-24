@@ -1,0 +1,14 @@
+{
+  "name": "faydonk.dev",
+    "private": true,
+  "scripts": {
+    "dev": "serve src",
+    "deploy": "vercel deploy --prod"
+  },
+  "devDependencies": {
+    "vercel": "^32.5.3"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+} 
