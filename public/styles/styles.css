@@ -102,22 +102,22 @@ body {
     box-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1); 
 }
 
-.social-icons a[href*="konect.gg"]::before {
+.social-icons a[href*="konect"]::before {
     background-color: rgb(255, 223, 0);
     box-shadow: 0 0 10px rgb(255, 223, 0), 0 0 20px rgb(255, 223, 0), 0 0 30px rgb(255, 223, 0); 
 }
 
-.social-icons a[href*="twitter.com"]::before {
+.social-icons a[href*="twitter"]::before {
     background-color: rgb(29, 161, 242); 
     box-shadow: 0 0 10px rgb(29, 161, 242), 0 0 20px rgb(29, 161, 242), 0 0 30px rgb(29, 161, 242); 
 }
 
-.social-icons a[href*="instagram.com"]::before {
+.social-icons a[href*="instagram"]::before {
     background-color: rgb(225, 48, 108); 
     box-shadow: 0 0 10px rgb(225, 48, 108), 0 0 20px rgb(225, 48, 108), 0 0 30px rgb(225, 48, 108); 
 }
 
-.social-icons a[href*="twitch.tv"]::before {
+.social-icons a[href*="twitch"]::before {
     background-color: rgb(100, 65, 165); 
     box-shadow: 0 0 10px rgb(100, 65, 165), 0 0 20px rgb(100, 65, 165), 0 0 30px rgb(100, 65, 165); 
 }
@@ -132,14 +132,14 @@ body {
     transition: filter 0.3s ease; 
 }
 
-.social-icons a[href*="konect.gg"] img,
-.social-icons a[href*="twitch.tv"] img,
-.social-icons a[href*="instagram.com"] img {
+.social-icons a[href*="konect"] img,
+.social-icons a[href*="twitch"] img,
+.social-icons a[href*="instagram"] img {
     width: 30px; 
     height: 30px;
 }
 
-.social-icons a[href*="twitter.com"] img {
+.social-icons a[href*="twitter"] img {
     width: 50px; 
     height: 50px;
 }
