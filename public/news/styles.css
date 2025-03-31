@@ -1,0 +1,230 @@
+@font-face {
+    font-family: 'Threat';
+    src: url('../fonts/Threat.otf') format('opentype');
+}
+
+body {
+    font-family: 'Threat', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1a1a1a, #2d2d2d);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav {
+    background-color: rgba(31, 41, 55, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#loginBtn, #newPostBtn button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: 'Threat', system-ui;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#loginBtn:hover, #newPostBtn button:hover {
+    background-color: #2563eb;
+    transform: translateY(-1px);
+}
+
+#news-feed {
+    display: grid;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    margin-bottom: 4rem;
+}
+
+.news-card {
+    background-color: rgba(31, 41, 55, 0.95);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.news-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.news-card h2 {
+    margin: 0 0 1rem 0;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.news-card p {
+    margin: 0 0 1rem 0;
+    color: #9ca3af;
+    line-height: 1.5;
+}
+
+.news-card .date {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+#newPostBtn {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 90;
+}
+
+#newPostBtn button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal styles */
+#loginModal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    z-index: 100;
+}
+
+#loginModal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #1f2937;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-content h2 {
+    margin: 0 0 1.5rem 0;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #9ca3af;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #374151;
+    border: 1px solid #4b5563;
+    color: white;
+}
+
+/* Spécifique pour le champ email */
+#email {
+    font-family: Arial, sans-serif;
+}
+
+/* Le champ mot de passe garde la police par défaut */
+#password {
+    font-family: inherit;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.modal-actions button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-actions button[type="submit"] {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+}
+
+.modal-actions button[type="submit"]:hover {
+    background-color: #2563eb;
+}
+
+.modal-actions button[type="button"] {
+    background: none;
+    border: none;
+    color: #9ca3af;
+}
+
+.modal-actions button[type="button"]:hover {
+    color: white;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    nav .container {
+        padding: 0.75rem 1rem;
+    }
+
+    nav a {
+        font-size: 1.25rem;
+    }
+
+    .modal-content {
+        margin: 0 1rem;
+    }
+}
