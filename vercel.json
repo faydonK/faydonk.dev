@@ -34,7 +34,13 @@
       "permanent": true
     }
   ],
-  "headers": [
+
+"routes": [ 
+  { "handle": "filesystem" },
+  { "src": "/(.*)", "status": 404, "dest": "public/404.html" }
+],
+  
+"headers": [
     {
       "source": "/(.*)",
       "headers": [
