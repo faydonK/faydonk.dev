@@ -19,7 +19,7 @@
       "permanent": true
     },
     {
-      "source": "/discord",
+      "source": "/msb",
       "destination": "https://discord.gg/HPcQWqPgD8",
       "permanent": true
     },
