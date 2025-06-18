@@ -24,6 +24,11 @@
       "permanent": true
     },
     {
+        "source": "/aircodes",
+        "destination": "https://github.com/faydonK/AirCodes",
+        "permanent": true
+    },
+    {
       "source": "/konect",
       "destination": "https://konect.gg/faydonK",
       "permanent": true
