@@ -1,0 +1,50 @@
+.not-found-page {
+  display: flex;
+  min-height: 100vh;
+  margin: auto;
+  background: #000000;
+  color: #FFFFFF;
+  position: relative;
+}
+
+.not-found-page section#card {
+  text-align: center;
+  margin: auto;
+}
+
+.not-found-page h1 {
+  font-weight: 700;
+  font-size: 8rem;
+  margin: 0 0 2rem 0;
+  color: #FFFFFF;
+}
+
+.not-found-page .error-message {
+  font-size: 1.5rem;
+  color: #CCCCCC;
+  margin-bottom: 2rem;
+}
+
+.not-found-page a {
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.not-found-page a:hover {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .not-found-page h1 {
+    font-size: 6rem;
+  }
+  
+  .not-found-page .error-message {
+    font-size: 1.2rem;
+  }
+}

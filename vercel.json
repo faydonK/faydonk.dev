@@ -25,7 +25,7 @@
     },
     {
         "source": "/aircodes",
-        "destination": "https://github.com/faydonK/AirCodes",
+        "destination": "https://aircodes.net",
         "permanent": true
     },
     {
