@@ -24,9 +24,9 @@
       "permanent": true
     },
     {
-        "source": "/aircodes",
-        "destination": "https://aircodes.net",
-        "permanent": true
+      "source": "/aircodes",
+      "destination": "https://aircodes.net",
+      "permanent": true
     },
     {
       "source": "/konect",
@@ -39,7 +39,13 @@
       "permanent": true
     }
   ],
-"headers": [
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
     {
       "source": "/(.*)",
       "headers": [
