@@ -25,7 +25,7 @@ const Terms: React.FC = () => {
               <h2>Content</h2>
               <p>
                 All content on this website, including but not limited to text, images, and code examples,
-                is the property of FaydonK unless otherwise stated.
+                is the property of faydonK unless otherwise stated.
               </p>
             </section>
             
@@ -33,15 +33,14 @@ const Terms: React.FC = () => {
               <h2>Privacy</h2>
               <p>
                 This website does not collect personal information. Any analytics or tracking
-                is handled by Vercel's standard hosting services.
+                is handled by Vercel's standard hosting services. See Vercel <a href="https://vercel.com/legal/privacy-policy">privacy policy</a> for more details.
               </p>
             </section>
             
             <section>
               <h2>Contact</h2>
               <p>
-                For any questions regarding these terms, please contact through the provided
-                channels on the main website.
+                For any questions regarding these terms, please contact through this email <a href="mailto:hello@faydonk.dev">hello@faydonk.dev</a>
               </p>
             </section>
             
