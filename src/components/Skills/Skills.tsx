@@ -69,12 +69,6 @@ const Skills: React.FC = () => {
       <div className="container">
         <div className={`skills-content ${isVisible ? 'fade-in-up' : ''}`}>
           <h2 className="skills-title">What I Use</h2>
-          <p className="skills-intro">
-            Passionné par le développement web, j'ai acquis une solide expérience avec diverses technologies modernes. 
-            De la création d'interfaces utilisateur interactives aux API robustes, j'aime explorer et maîtriser 
-            les outils qui permettent de créer des applications performantes et innovantes.
-          </p>
-          
           <div className="skills-section">
             <h3 className="section-title">Technologies:</h3>
             <div className="skills-grid">
