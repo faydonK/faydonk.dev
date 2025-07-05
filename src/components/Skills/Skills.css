@@ -3,6 +3,17 @@
   background: #000000;
 }
 
+.skills-content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.skills-content.fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .skills-title {
   text-align: center;
   font-size: 2.5rem;
@@ -88,6 +99,10 @@
 }
 
 @media (max-width: 768px) {
+  .skills {
+    padding: 3rem 0;
+  }
+  
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
     gap: 1rem;

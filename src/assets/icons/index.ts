@@ -12,4 +12,6 @@ export { default as PostmanIcon } from './PostmanIcon';
 export { default as InsomniaIcon } from './InsomniaIcon';
 export { default as UbuntuIcon } from './UbuntuIcon';
 export { default as ViteIcon } from './ViteIcon';
-export { default as VSCodeIcon } from './VSCodeIcon';
+export { default as VSCodeIcon } from './VSCodeIcon'; 
+export { default as GithubIcon } from './GithubIcon';
+export { default as TwitterIcon } from './TwitterIcon';
