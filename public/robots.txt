@@ -1,2 +1,6 @@
 User-agent: *
+Disallow: /terms
 Disallow: ../src/assets/images
+
+Allow ../src/assets/images/banner_faydonk.png
+Allow: /public/favicon.ico
