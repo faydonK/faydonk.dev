@@ -1,0 +1,140 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out;
+}
+
+.loading-screen.transitioning {
+  opacity: 0;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.profile-picture-loading {
+  animation: profilePulse 2s ease-in-out infinite;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 10000;
+}
+
+.profile-picture-loading.transition-to-hero {
+  animation: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  animation: moveToHero 0.8s ease-out forwards;
+}
+
+.profile-picture-loading img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #FFFFFF;
+  object-fit: cover;
+  transition: all 0.8s ease-out;
+}
+
+.welcome-message {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.welcome-message h2 {
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+@keyframes profilePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes moveToHero {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-350px, 150px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-picture-loading img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  @keyframes moveToHero {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-200px, 100px) scale(0.8);
+      opacity: 0;
+    }
+  }
+  
+  .welcome-message h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-picture-loading img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  @keyframes moveToHero {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-120px, 80px) scale(0.7);
+      opacity: 0;
+    }
+  }
+  
+  .welcome-message h2 {
+    font-size: 1.3rem;
+  }
+}

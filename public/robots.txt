@@ -1,5 +1,2 @@
 User-agent: *
-Disallow: /assets/
-Disallow: /404.html
-
-Allow: /assets/img/Background-in-png.png
+Disallow: ../src/assets/images

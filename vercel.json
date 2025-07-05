@@ -24,9 +24,9 @@
       "permanent": true
     },
     {
-        "source": "/aircodes",
-        "destination": "https://github.com/faydonK/AirCodes",
-        "permanent": true
+      "source": "/aircodes",
+      "destination": "https://aircodes.net",
+      "permanent": true
     },
     {
       "source": "/konect",
@@ -39,7 +39,10 @@
       "permanent": true
     }
   ],
-"headers": [
+    "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ],
+  "headers": [
     {
       "source": "/(.*)",
       "headers": [
