@@ -107,7 +107,7 @@
   border-bottom: 1px solid #333333;
   flex-direction: column;
   padding: 1rem 0;
-  transform: translateY(-100%);
+  transform: translateY(-10%);
   opacity: 0;
   transition: all 0.3s ease;
 }
@@ -115,6 +115,7 @@
 .mobile-nav-open {
   transform: translateY(0);
   opacity: 1;
+  visibility: visible;
 }
 
 .mobile-nav-item {

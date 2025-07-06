@@ -45,7 +45,7 @@ const About: React.FC = () => {
               Today I continue to do my projects in my corner, I sometimes hesitate to launch into freelancing to do other people's projects, 
               but I always block myself because I have the studies.
             </p>
-            <p className="ps">ps: I still use AI a lot 👀</p>
+            <p className="ps">ps: I still use AI for help me 👀</p>
           </div>
         </div>
       </div>

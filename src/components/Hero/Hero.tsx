@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
             <div className="profile-text">
               <h1 className="hero-title">Hello, I'm faydonK!</h1>
               <p className="hero-description">
-                Passionate junior developer creating some random stuff. 
+                French passionate junior developer creating some random stuff. 
                 I like making apps with new tech
                 and bringing creative ideas to life through code
               </p>
