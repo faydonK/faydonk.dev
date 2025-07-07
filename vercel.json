@@ -19,11 +19,6 @@
       "permanent": true
     },
     {
-      "source": "/msb",
-      "destination": "https://discord.gg/HPcQWqPgD8",
-      "permanent": true
-    },
-    {
       "source": "/aircodes",
       "destination": "https://aircodes.net",
       "permanent": true
