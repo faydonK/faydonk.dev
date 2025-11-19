@@ -24,11 +24,6 @@
       "permanent": true
     },
     {
-      "source": "/konect",
-      "destination": "https://konect.gg/faydonK",
-      "permanent": true
-    },
-    {
       "source": "/github",
       "destination": "https://github.com/faydonK",
       "permanent": true
