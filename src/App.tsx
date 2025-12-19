@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Snowfall from 'react-snowfall';
 import { useTypewriter } from './hooks/useTypewriter';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
@@ -15,6 +16,7 @@ import './App.css';
 function AppContent() {
   // const [isLoading, setIsLoading] = useState(false);
   const [currentTitles, setCurrentTitle] = useState('Hello World!');
+  const [showSnowfall, setShowSnowfall] = useState(false);
   const location = useLocation();
 
   const titles = [
@@ -36,12 +38,22 @@ function AppContent() {
     document.title = `faydonk.dev | ${currentTitle}`;
   }, [currentTitle]);
 
+  useEffect(() => {
+    const currentDate = new Date();
+    const currentMonth = currentDate.getMonth();
+
+    if (currentMonth === 11) {
+      setShowSnowfall(true);
+    }
+  }, []);
+
   // if (isLoading) {
   //   return <LoadingScreen />;
   // }
 
   return (
     <>
+      {showSnowfall && <Snowfall style={{ position: 'fixed', zIndex: 9999 }} />}
       <Header />
       <Routes>
         <Route path="/" element={
