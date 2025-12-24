@@ -5,22 +5,17 @@
   "redirects": [
     {
       "source": "/twitch",
-      "destination": "https://www.twitch.tv/faydonKwin",
+      "destination": "https://www.twitch.tv/faydonK_",
       "permanent": true
     },
     {
       "source": "/twitter",
-      "destination": "https://twitter.com/faydonKwin",
+      "destination": "https://twitter.com/faydonKdev",
       "permanent": true
     },
     {
       "source": "/instagram",
-      "destination": "https://instagram.com/milo_tout_cours/",
-      "permanent": true
-    },
-    {
-      "source": "/aircodes",
-      "destination": "https://aircodes.net",
+      "destination": "https://instagram.com/milo.fyk/",
       "permanent": true
     },
     {

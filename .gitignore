@@ -15,8 +15,6 @@ nginx.conf
 *.local
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
 .idea
 .DS_Store
 *.suo
@@ -25,5 +23,12 @@ nginx.conf
 *.sln
 *.sw?
 
-# Other
-info.md
+# For Agents IA tools
+.agents
+agents.md
+CLAUDE.md
+GLAW.md
+
+
+# Personnal
+graphify-out

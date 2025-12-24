@@ -26,7 +26,9 @@ function AppContent() {
 
   const titles = [
     'Hello World!',
-    'Junior Dev'
+    'Maybe Claude is better...',
+    'Junior Dev',
+    'Student'
   ];
 
   const currentTitle = useTypewriter(titles, 550, 220, 3000);
