@@ -50,6 +50,7 @@
 .nav-links {
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .nav-link {
@@ -78,6 +79,27 @@
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid #CCCCCC;
+  color: #CCCCCC;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.lang-switcher:hover {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Mobile styles */
@@ -126,6 +148,11 @@
 
 .mobile-nav-item:last-child {
   border-bottom: none;
+}
+
+.mobile-nav .lang-switcher {
+  margin: 0 auto;
+  width: fit-content;
 }
 
 .desktop-only {

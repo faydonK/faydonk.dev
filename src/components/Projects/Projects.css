@@ -59,11 +59,23 @@
   flex-shrink: 0;
 }
 
+.project-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
 .project-name {
   font-size: 1.5rem;
   font-weight: 600;
   color: #FFFFFF;
   margin: 0;
+}
+
+.project-role {
+  font-size: 0.9rem;
+  color: #888888;
+  font-weight: 400;
 }
 
 .project-content {

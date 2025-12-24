@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets"
+  },
+  "hero": {
+    "greeting": "Salut, je suis",
+    "name": "Faydonk",
+    "title": "Bonjour le monde !",
+    "subtitle": "Développeur Junior"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "description": "Votre description ici"
+  },
+  "skills": {
+    "title": "Mes Compétences"
+  },
+  "projects": {
+    "title": "Mes Projets"
+  },
+  "footer": {
+    "rights": "Tous droits réservés"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Page introuvable",
+    "returnHome": "Retour à l'accueil"
+  },
+  "terms": {
+    "title": "Conditions d'utilisation",
+    "hosting": {
+      "title": "Informations d'hébergement",
+      "content": "Ce site web est hébergé sur Vercel, une plateforme cloud pour sites statiques et fonctions serverless. Vercel fournit l'infrastructure et le réseau de diffusion de contenu (CDN) pour ce portfolio."
+    },
+    "content": {
+      "title": "Contenu",
+      "text": "Tout le contenu de ce site web, incluant mais non limité au texte, images et exemples de code, est la propriété de faydonK sauf mention contraire."
+    },
+    "privacy": {
+      "title": "Confidentialité",
+      "text": "Ce site ne collecte pas d'informations personnelles. Toute analyse ou suivi est géré par les services d'hébergement standard de Vercel. Voir la",
+      "link": "politique de confidentialité",
+      "textEnd": "de Vercel pour plus de détails."
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "Pour toute question concernant ces conditions, veuillez contacter par email"
+    },
+    "backHome": "← Retour à l'accueil"
+  }
+}

@@ -1,8 +1,11 @@
 import React from 'react';
+import { useLanguage } from '../../hooks/useLanguage';
 import { GithubIcon, TwitterIcon } from '../../assets/icons';
 import './Footer.css';
 
 const Footer: React.FC = () => {
+  const { currentLanguage } = useLanguage();
+
   return (
     <footer className="footer">
       <div className="container">
@@ -14,7 +17,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
           <div className="footer-center">
-            <a href="/terms" className="footer-link">Terms</a>
+            <a href={`/${currentLanguage}/terms`} className="footer-link">Terms</a>
           </div>
           <div className="footer-social">
             <a href="https://github.com/faydonk" className="social-link" target="_blank" rel="noopener noreferrer">

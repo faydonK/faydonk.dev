@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Snowfall from 'react-snowfall';
 import { useTypewriter } from './hooks/useTypewriter';
+import { useLanguage } from './hooks/useLanguage';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
@@ -11,6 +12,7 @@ import Footer from './components/Footer/Footer';
 // import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 import Terms from './pages/Terms';
 import NotFound from './pages/404';
+import './utils/i18n';
 import './App.css';
 
 function AppContent() {
@@ -18,6 +20,9 @@ function AppContent() {
   const [currentTitles, setCurrentTitle] = useState('Hello World!');
   const [showSnowfall, setShowSnowfall] = useState(false);
   const location = useLocation();
+  
+  // Le hook gère automatiquement la langue
+  useLanguage();
 
   const titles = [
     'Hello World!',
@@ -56,7 +61,7 @@ function AppContent() {
       {showSnowfall && <Snowfall style={{ position: 'fixed', zIndex: 9999 }} />}
       <Header />
       <Routes>
-        <Route path="/" element={
+        <Route path="/:lang" element={
           <div className="app">
             <div style={{ height: '71px' }}></div>
             <Hero />
@@ -68,7 +73,8 @@ function AppContent() {
             <Footer />
           </div>
         } />
-        <Route path="/terms" element={<Terms />} />
+        <Route path="/:lang/terms" element={<Terms />} />
+        <Route path="/" element={<Navigate to="/en" replace />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

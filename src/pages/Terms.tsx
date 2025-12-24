@@ -1,9 +1,14 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import './Terms.css';
 
 const Terms: React.FC = () => {
+  const { t } = useTranslation();
+  const { lang } = useParams<{ lang: string }>();
+
   return (
     <>
       <Header />
@@ -11,40 +16,37 @@ const Terms: React.FC = () => {
         <div style={{ height: '71px' }}></div>
         <div className="container">
           <div className="terms-content">
-            <h1>Terms of Service</h1>
+            <h1>{t('terms.title')}</h1>
             
             <section>
-              <h2>Hosting Information</h2>
+              <h2>{t('terms.hosting.title')}</h2>
               <p>
-                This website is hosted on Vercel, a cloud platform for static sites and serverless functions.
-                Vercel provides the infrastructure and content delivery network (CDN) for this portfolio.
+                {t('terms.hosting.content')}
               </p>
             </section>
             
             <section>
-              <h2>Content</h2>
+              <h2>{t('terms.content.title')}</h2>
               <p>
-                All content on this website, including but not limited to text, images, and code examples,
-                is the property of faydonK unless otherwise stated.
+                {t('terms.content.text')}
               </p>
             </section>
             
             <section>
-              <h2>Privacy</h2>
+              <h2>{t('terms.privacy.title')}</h2>
               <p>
-                This website does not collect personal information. Any analytics or tracking
-                is handled by Vercel's standard hosting services. See Vercel <a href="https://vercel.com/legal/privacy-policy">privacy policy</a> for more details.
+                {t('terms.privacy.text')} <a href="https://vercel.com/legal/privacy-policy">{t('terms.privacy.link')}</a> {t('terms.privacy.textEnd')}
               </p>
             </section>
             
             <section>
-              <h2>Contact</h2>
+              <h2>{t('terms.contact.title')}</h2>
               <p>
-                For any questions regarding these terms, please contact through this email <a href="mailto:hello@faydonk.dev">hello@faydonk.dev</a>
+                {t('terms.contact.text')} <a href="mailto:hello@faydonk.dev">hello@faydonk.dev</a>
               </p>
             </section>
             
-            <a href="/" className="back-link">← Back to Home</a>
+            <a href={`/${lang || 'en'}`} className="back-link">{t('terms.backHome')}</a>
           </div>
         </div>
       </div>

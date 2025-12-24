@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Faydonk",
+    "title": "Hello World!",
+    "subtitle": "Junior Dev"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Your about description here"
+  },
+  "skills": {
+    "title": "My Skills"
+  },
+  "projects": {
+    "title": "My Projects"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Page Not Found",
+    "returnHome": "Return Home"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "hosting": {
+      "title": "Hosting Information",
+      "content": "This website is hosted on Vercel, a cloud platform for static sites and serverless functions. Vercel provides the infrastructure and content delivery network (CDN) for this portfolio."
+    },
+    "content": {
+      "title": "Content",
+      "text": "All content on this website, including but not limited to text, images, and code examples, is the property of faydonK unless otherwise stated."
+    },
+    "privacy": {
+      "title": "Privacy",
+      "text": "This website does not collect personal information. Any analytics or tracking is handled by Vercel's standard hosting services. See Vercel",
+      "link": "privacy policy",
+      "textEnd": "for more details."
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "For any questions regarding these terms, please contact through this email"
+    },
+    "backHome": "← Back to Home"
+  }
+}

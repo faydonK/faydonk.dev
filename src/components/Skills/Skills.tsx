@@ -43,27 +43,6 @@ const Skills: React.FC = () => {
     };
   }, []);
 
-  const technologies = [
-    { name: 'JavaScript', Icon: JavaScriptIcon, title: 'JavaScript' },
-    { name: 'TypeScript', Icon: TypeScriptIcon, title: 'TypeScript' },
-    { name: 'Ruby', Icon: RubyIcon, title: 'Ruby' },
-    { name: 'Vite', Icon: ViteIcon, title: 'Vite' },
-    { name: 'React', Icon: ReactIcon, title: 'React' },
-    { name: 'Express', Icon: ExpressIcon, title: 'Express' },
-    { name: 'Node.js', Icon: NodeJSIcon, title: 'Node.js' },
-    { name: 'SQLite', Icon: SQLiteIcon, title: 'SQLite' },
-    { name: 'Discord.js', Icon: DiscordIcon, title: 'Discord.js' }
-  ];
-
-  const tools = [
-    { name: 'VS Code', Icon: VSCodeIcon, title: 'VS Code' },
-    { name: 'Git', Icon: GitIcon, title: 'Git' },
-    { name: 'Docker', Icon: DockerIcon, title: 'Docker' },
-    { name: 'Ubuntu', Icon: UbuntuIcon, title: 'Ubuntu' },
-    { name: 'Postman', Icon: PostmanIcon, title: 'Postman' },
-    { name: 'Insomnia', Icon: InsomniaIcon, title: 'Insomnia' },
-  ];
-
   return (
     <section id="skills" className="skills" ref={skillsRef}>
       <div className="container">
@@ -99,5 +78,26 @@ const Skills: React.FC = () => {
     </section>
   );
 };
+
+  const technologies = [
+    { name: 'JavaScript', Icon: JavaScriptIcon, title: 'JavaScript' },
+    { name: 'TypeScript', Icon: TypeScriptIcon, title: 'TypeScript' },
+    { name: 'Ruby', Icon: RubyIcon, title: 'Ruby' },
+    { name: 'Vite', Icon: ViteIcon, title: 'Vite' },
+    { name: 'React', Icon: ReactIcon, title: 'React' },
+    { name: 'Express', Icon: ExpressIcon, title: 'Express' },
+    { name: 'Node.js', Icon: NodeJSIcon, title: 'Node.js' },
+    { name: 'SQLite', Icon: SQLiteIcon, title: 'SQLite' },
+    { name: 'Discord.js', Icon: DiscordIcon, title: 'Discord.js' }
+  ];
+
+  const tools = [
+    { name: 'VS Code', Icon: VSCodeIcon, title: 'VS Code' },
+    { name: 'Git', Icon: GitIcon, title: 'Git' },
+    { name: 'Docker', Icon: DockerIcon, title: 'Docker' },
+    { name: 'Ubuntu', Icon: UbuntuIcon, title: 'Ubuntu' },
+    { name: 'Postman', Icon: PostmanIcon, title: 'Postman' },
+    { name: 'Insomnia', Icon: InsomniaIcon, title: 'Insomnia' },
+  ];
 
 export default Skills;
