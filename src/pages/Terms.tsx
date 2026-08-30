@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import './Terms.css';
 
@@ -11,7 +10,6 @@ const Terms: React.FC = () => {
 
   return (
     <>
-      <Header />
       <div className="terms-page">
         <div style={{ height: '71px' }}></div>
         <div className="container">

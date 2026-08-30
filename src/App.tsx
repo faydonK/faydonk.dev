@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import Snowfall from 'react-snowfall';
 import { useTypewriter } from './hooks/useTypewriter';
 import { useLanguage } from './hooks/useLanguage';
@@ -11,18 +11,39 @@ import Projects from './components/Projects/Projects';
 import Footer from './components/Footer/Footer';
 // import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 import Terms from './pages/Terms';
+import Lab from './pages/Lab';
 import NotFound from './pages/404';
 import './utils/i18n';
 import './App.css';
 
-function AppContent() {
-  // const [isLoading, setIsLoading] = useState(false);
-  const [currentTitles, setCurrentTitle] = useState('Hello World!');
-  const [showSnowfall, setShowSnowfall] = useState(false);
-  const location = useLocation();
-  
-  // Le hook gère automatiquement la langue
+
+function LangLayout() {
   useLanguage();
+
+  return (
+    <>
+      <Header />
+      <Outlet />
+    </>
+  );
+}
+
+function HomePage() {
+  return (
+    <div className="app">
+      <Hero />
+      <About />
+      <div className="section-divider"></div>
+      <Skills />
+      <div className="section-divider"></div>
+      <Projects />
+      <Footer />
+    </div>
+  );
+}
+
+function AppContent() {
+  const [showSnowfall, setShowSnowfall] = useState(false);
 
   const titles = [
     'Hello World!',
@@ -32,14 +53,6 @@ function AppContent() {
   ];
 
   const currentTitle = useTypewriter(titles, 550, 220, 3000);
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 3000);
-
-  //   return () => clearTimeout(timer);
-  // }, [location.pathname]);
 
   useEffect(() => {
     document.title = `faydonk.dev | ${currentTitle}`;
@@ -54,29 +67,16 @@ function AppContent() {
     }
   }, []);
 
-  // if (isLoading) {
-  //   return <LoadingScreen />;
-  // }
-
   return (
     <>
       {showSnowfall && <Snowfall style={{ position: 'fixed', zIndex: 9999 }} />}
-      <Header />
       <Routes>
-        <Route path="/:lang" element={
-          <div className="app">
-            <div style={{ height: '71px' }}></div>
-            <Hero />
-            <About />
-            <div className="section-divider"></div>
-            <Skills />
-            <div className="section-divider"></div>
-            <Projects />
-            <Footer />
-          </div>
-        } />
-        <Route path="/:lang/terms" element={<Terms />} />
+        <Route path="/lab" element={<Lab />} />
         <Route path="/" element={<Navigate to="/en" replace />} />
+        <Route path="/:lang" element={<LangLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="terms" element={<Terms />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

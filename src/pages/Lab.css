@@ -1,0 +1,53 @@
+.lab-page {
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1.5rem;
+}
+
+.lab-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.lab-subtitle {
+  color: #cccccc;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.lab-cube-stage {
+  width: min(500px, 90vw);
+  height: min(500px, 90vw);
+}
+
+.lab-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.glass-button {
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 8px 24px rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}

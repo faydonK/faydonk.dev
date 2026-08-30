@@ -3,11 +3,17 @@
   top: 0;
   left: 0;
   right: 0;
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header--scrolled {
   background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #333333;
-  z-index: 1000;
-  transition: all 0.3s ease;
 }
 
 .nav {
