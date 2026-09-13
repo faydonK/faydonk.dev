@@ -32,7 +32,7 @@
       "source": "/schw",
       "destination": "https://discord.gg/j7cCuseUCC",
       "permanent": true
-  ],
+  ]
     "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ],
