@@ -27,7 +27,11 @@
       "source": "/github",
       "destination": "https://github.com/faydonK",
       "permanent": true
-    }
+    },
+    {
+      "source": "/schw",
+      "destination": "https://discord.gg/j7cCuseUCC",
+      "permanent": true
   ],
     "rewrites": [
     { "source": "/(.*)", "destination": "/" }
