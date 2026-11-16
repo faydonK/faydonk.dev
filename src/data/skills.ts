@@ -1,4 +1,5 @@
 import discord from '../assets/logos/discord.svg';
+import go from '../assets/logos/go.svg';
 import claudecode from '../assets/logos/claudecode.svg';
 import docker from '../assets/logos/docker.svg';
 import express from '../assets/logos/express.svg';
@@ -22,6 +23,9 @@ import fastapi from '../assets/logos/fastapi.svg';
 import githubdesktop from '../assets/logos/githubdesktop.svg';
 import mysql from '../assets/logos/mysql.svg';
 import shopifyhydrogen from '../assets/logos/shopifyhydrogen.svg';
+import radixui from '../assets/logos/radixui.svg';
+import python from '../assets/logos/python.svg';
+
 
 export interface Skill {
   name: string;
@@ -31,20 +35,23 @@ export interface Skill {
 export const TECHNOLOGIES: Skill[] = [
   { name: 'JavaScript', logo: javascript },
   { name: 'TypeScript', logo: typescript },
+  { name: 'Python (learning)', logo: python },
+  { name: 'Go (Learning)', logo: go },
   { name: 'Vite', logo: vite },
   { name: 'React', logo: react },
   { name: 'Next.js', logo: nextjs },
   { name: 'Shopify Hydrogen', logo: shopifyhydrogen },
+  { name: 'Radix UI', logo: radixui },
   { name: 'Express', logo: express },
-  { name: 'Node.js', logo: nodejs },
+  { name: 'FastAPI', logo: fastapi },
+  { name: 'Discord.js', logo: discord },
   { name: 'SQLite', logo: sqlite },
   { name: 'MySQL', logo: mysql },
-  { name: 'Discord.js', logo: discord },
-  { name: 'FastAPI', logo: fastapi }
+  { name: 'Node.js', logo: nodejs },  
 ];
 
 export const TOOLS: Skill[] = [
-  { name: 'VS Code', logo: vscode },
+  { name: 'Visual Studio Code', logo: vscode },
   { name: 'Git', logo: git },
   { name: 'Docker', logo: docker },
   { name: 'Ubuntu', logo: ubuntu },
