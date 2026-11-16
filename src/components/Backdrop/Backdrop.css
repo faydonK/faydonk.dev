@@ -1,0 +1,59 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.backdrop__dots,
+.backdrop__lines,
+.backdrop__scan {
+  position: absolute;
+  will-change: transform;
+}
+
+.backdrop__dots {
+  inset: -28px 0 0 -28px; /* one tile bigger on the side it drifts from */
+  background-image: radial-gradient(rgba(255, 255, 255, .09) 1px, transparent 1px);
+  background-size: 28px 28px;
+  animation: backdrop-dots 4s linear infinite;
+}
+
+.backdrop__lines {
+  inset: -112px -112px 0 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+  background-size: 112px 112px;
+  animation: backdrop-lines 24s linear infinite;
+}
+
+.backdrop__scan {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 240px;
+  background: linear-gradient(rgba(242, 242, 242, 0), rgba(242, 242, 242, .045), rgba(242, 242, 242, 0));
+  transform: translateY(-240px);
+  animation: backdrop-scan 9s linear infinite;
+}
+
+@keyframes backdrop-dots {
+  to { transform: translate3d(28px, 28px, 0); }
+}
+
+@keyframes backdrop-lines {
+  to { transform: translate3d(-112px, 112px, 0); }
+}
+
+@keyframes backdrop-scan {
+  0% { transform: translateY(-240px); }
+  25%, 100% { transform: translateY(100vh); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop__scan {
+    display: none;
+  }
+}

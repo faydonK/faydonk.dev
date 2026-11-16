@@ -1,34 +1,92 @@
 {
   "nav": {
+    "label": "Navigation principale",
     "about": "À propos",
     "skills": "Compétences",
-    "projects": "Projets"
+    "projects": "Projets",
+    "language": "Langue"
+  },
+  "loader": {
+    "label": "Chargement de faydonk.dev",
+    "sector": "SECTEUR 07 · PARIS",
+    "signal": "SIGNAL",
+    "acquiring": "ACQUISITION DE LA CIBLE…",
+    "locked": "CIBLE VERROUILLÉE — faydonK",
+    "mode": "MODE · ACQUISITION"
   },
   "hero": {
-    "greeting": "Salut, je suis",
-    "name": "Faydonk",
-    "title": "Bonjour le monde !",
-    "subtitle": "Développeur Junior"
+    "greeting": "Salut, moi c'est",
+    "description": "Développeur junior français passionné, je crée des trucs un peu au hasard. J'aime faire des applis avec les nouvelles technos et donner vie à des idées créatives grâce au code.",
+    "ctaProjects": "SCANNER LES PROJETS",
+    "ctaContact": "OUVRIR UN CANAL",
+    "locked": "CIBLE VERROUILLÉE",
+    "callouts": {
+      "origin": "ORIGINE · FR",
+      "class": "CLASSE · DEV JUNIOR"
+    }
   },
   "about": {
-    "title": "À propos de moi",
-    "description": "Votre description ici"
+    "kicker": "// FICHIER LOG 01",
+    "title": "À propos",
+    "timeline": {
+      "age16": {
+        "tag": "16 ANS",
+        "text": "Je m'intéresse au dev. Premier objectif : créer des bots Discord."
+      },
+      "error": {
+        "tag": "ERREUR",
+        "text": "Finalement, ce n'était pas aussi simple que prévu — je suis passé au développement web, j'ai commencé, puis j'ai vite arrêté."
+      },
+      "reboot": {
+        "tag": "REBOOT",
+        "text": "Avec l'arrivée de l'IA, j'ai compris que c'était un outil très puissant pour apprendre."
+      },
+      "fuel": {
+        "tag": "CARBURANT",
+        "text": "Voir les idées que j'ai en tête prendre vie me donne une bonne dose d'adrénaline."
+      },
+      "now": {
+        "tag": "MAINTENANT",
+        "text": "Je continue à construire des projets dans mon coin. Le freelance me tente, mais les études passent avant."
+      }
+    },
+    "ps": "ps : j'utilise encore l'IA pour m'aider ;)"
   },
   "skills": {
-    "title": "Mes Compétences"
+    "kicker": "// SCAN SYSTÈME",
+    "title": "Ce que j'utilise",
+    "tablist": "Catégories de compétences",
+    "tabs": {
+      "tech": "TECHNOLOGIES",
+      "tools": "OUTILS"
+    }
   },
   "projects": {
-    "title": "Mes Projets"
+    "kicker": "// CIBLES ACQUISES : {{count}}",
+    "title": "Mes Projets",
+    "layoutFeatured": "AFFICHAGE · À LA UNE",
+    "layoutFeaturedGrid": "AFFICHAGE · À LA UNE + GRILLE",
+    "featured": "À LA UNE · {{index}}"
+  },
+  "mail": {
+    "title": "OUVRIR UN CANAL",
+    "close": "Fermer",
+    "newTab": "s'ouvre dans un nouvel onglet",
+    "app": "ouvre l'application mail"
   },
   "footer": {
-    "rights": "Tous droits réservés"
+    "kicker": "// OUVRIR UN CANAL",
+    "terms": "Conditions",
+    "end": "FIN DE TRANSMISSION"
   },
   "notFound": {
+    "kicker": "// SIGNAL PERDU",
     "title": "404",
     "message": "Page introuvable",
     "returnHome": "Retour à l'accueil"
   },
   "terms": {
+    "kicker": "// MENTIONS",
     "title": "Conditions d'utilisation",
     "hosting": {
       "title": "Informations d'hébergement",

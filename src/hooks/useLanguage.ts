@@ -1,28 +1,19 @@
 import { useEffect } from 'react';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
-export type SupportedLanguage = 'en' | 'fr';
-
-const SUPPORTED_LANGUAGES: SupportedLanguage[] = ['en', 'fr'];
-const DEFAULT_LANGUAGE: SupportedLanguage = 'en';
-
-const isSupportedLanguage = (value: string | undefined): value is SupportedLanguage =>
-  value !== undefined && SUPPORTED_LANGUAGES.includes(value as SupportedLanguage);
+import {
+  DEFAULT_LANGUAGE,
+  isSupportedLanguage,
+  type SupportedLanguage,
+} from '../utils/i18n';
 
 export const useLanguage = () => {
   const { lang } = useParams<{ lang: string }>();
-  const { i18n } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const currentLanguage = isSupportedLanguage(lang) ? lang : DEFAULT_LANGUAGE;
-
-  useEffect(() => {
-    if (i18n.language !== currentLanguage) {
-      i18n.changeLanguage(currentLanguage);
-    }
-  }, [currentLanguage, i18n]);
+  const isSupported = isSupportedLanguage(lang);
+  const currentLanguage: SupportedLanguage = isSupported ? lang : DEFAULT_LANGUAGE;
 
   const changeLanguage = (newLang: SupportedLanguage) => {
     if (newLang === currentLanguage) return;
@@ -34,11 +25,18 @@ export const useLanguage = () => {
       segments.unshift(newLang);
     }
 
-    navigate(`/${segments.join('/')}`);
+    navigate(`/${segments.join('/')}${location.hash}`);
   };
 
-  return {
-    currentLanguage,
-    changeLanguage,
-  };
+  return { currentLanguage, isSupported, changeLanguage };
+};
+
+export const useLanguageSync = (language: SupportedLanguage) => {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    if (i18n.language !== language) {
+      i18n.changeLanguage(language);
+    }
+  }, [language, i18n]);
 };

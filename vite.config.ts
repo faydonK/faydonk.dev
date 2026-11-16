@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   build: {
@@ -9,8 +8,7 @@ export default defineConfig({
     emptyOutDir: true,
     assetsDir: 'assets',
     sourcemap: false,
-  },
-  optimizeDeps: {
-    exclude: ['lucide-react'],
+    assetsInlineLimit: (filePath) =>
+      filePath.includes('/assets/logos/') || filePath.includes('/assets/mail/') ? false : undefined, // logos served as files, not inlined in the main bundle
   },
 });

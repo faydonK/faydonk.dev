@@ -1,0 +1,23 @@
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.section-heading--center {
+  align-items: center;
+  text-align: center;
+}
+
+.section-heading__kicker {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-gray-600);
+}
+
+.section-heading__title {
+  font-size: clamp(48px, 6vw, 84px);
+  font-weight: 700;
+  line-height: .95;
+  letter-spacing: -0.045em;
+}

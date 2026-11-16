@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "unicorn", "oxc"],
+  "categories": {
+    "correctness": "error"
+  },
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "ignorePatterns": ["dist", "archive", "scripts"],
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "warn",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }],
+    "react/immutability": "off", // React Compiler check (not used): R3F mutates objects in frame callbacks by design
+    "react/refs": "off", // React Compiler check: misreads useInView's { ref, seen }
+    "react/purity": "off" // React Compiler check: flags new Date() for the footer's year
+  }
+}

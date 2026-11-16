@@ -1,128 +1,343 @@
 .skills {
-  padding: 4rem 0;
-  background: #000000;
+  position: relative;
+  overflow: hidden;
+  border-block: 1px solid var(--color-gray-950);
+  background: rgba(10, 10, 10, .9);
 }
 
-.skills-content {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
-}
-
-.skills-content.fade-in-up {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.skills-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #FFFFFF;
-  font-weight: 600;
-}
-
-.skills-intro {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 3rem;
-  color: #CCCCCC;
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
-
-.skills-section {
-  margin-bottom: 3rem;
-}
-
-.section-title {
-  font-size: 1.2rem;
-  color: #FFFFFF;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 1.5rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.skill-item {
+.skills__inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 1rem;
+  gap: 32px;
+  padding-block: 120px;
+}
+
+.skills__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.skills__tabs {
+  display: flex;
+  border: 1px solid var(--color-gray-800);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.skills__tab {
+  min-height: 52px;
+  padding: 0 26px;
+  border: 0;
   background: transparent;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  position: relative;
+  color: var(--color-gray-300);
   cursor: pointer;
+  transition: background .2s, color .2s;
 }
 
-.skill-item::after {
-  content: '';
+.skills__tab + .skills__tab {
+  border-left: 1px solid var(--color-gray-800);
+}
+
+.skills__tab:hover {
+  color: var(--color-white);
+}
+
+.skills__tab[aria-selected='true'] {
+  background: var(--color-bright);
+  color: var(--color-bg);
+}
+
+.skills__stage {
+  position: relative;
+  height: 620px;
+  overflow: hidden;
+}
+
+.skills__core {
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background: #FFFFFF;
-  transition: all 0.3s ease;
-}
-
-.skill-item:hover::after {
-  width: 60%;
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
-}
-
-.skill-icon {
-  width: 50px;
-  height: 50px;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
+  perspective: 1400px;
 }
 
-.skill-item:hover .skill-icon {
-  transform: scale(1.1);
+.skills__orbit {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  animation: skills-orbit 40s linear infinite;
 }
 
-@media (max-width: 768px) {
-  .skills {
-    padding: 3rem 0;
+.skills__orbit-ring {
+  position: absolute;
+  left: -200px;
+  top: -200px;
+  width: 400px;
+  height: 400px;
+  border: 1px solid var(--color-gray-800);
+  border-radius: 50%;
+}
+
+.skills__orbit-ring--outer {
+  left: -300px;
+  top: -300px;
+  width: 600px;
+  height: 600px;
+  border: 1px dashed var(--color-gray-870);
+}
+
+.skills__core-label {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 96px);
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: var(--color-gray-500);
+  pointer-events: none;
+}
+
+.skills__scene,
+.skills__cloud {
+  position: absolute;
+  inset: 0;
+}
+
+.skills__name {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 4px 8px;
+  border: 1px solid var(--color-gray-800);
+  background: var(--color-bg);
+  color: var(--color-bright);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .15s;
+}
+
+.skills__name.is-visible {
+  opacity: 1;
+}
+
+.skills__wipe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-bright);
+  box-shadow: 0 0 24px var(--color-bright);
+  pointer-events: none;
+}
+
+.skills__wipe--from-left {
+  animation: skills-wipe-ltr .8s cubic-bezier(.6, 0, .2, 1) both;
+}
+
+.skills__wipe--from-right {
+  animation: skills-wipe-rtl .8s cubic-bezier(.6, 0, .2, 1) both;
+}
+
+.css-skills {
+  --logo: 50px;
+  --orbit-x: min(420px, 50% - 50px);
+  --orbit-y: min(230px, 50% - 50px);
+  position: absolute;
+  inset: 0 var(--gutter); /* the stage is full width: keep the ring in the page column */
+}
+
+.css-skills__ring {
+  position: absolute;
+  inset: 0;
+}
+
+.css-globe {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 160px;
+  height: 160px;
+  margin: -80px 0 0 -80px;
+  border: 1px solid rgba(242, 242, 242, .5);
+  border-radius: 50%;
+  perspective: 600px;
+}
+
+.css-globe__sphere {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: css-globe-spin 24s linear infinite;
+}
+
+.css-globe__ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(242, 242, 242, .5);
+  border-radius: 50%;
+}
+
+.css-globe__ring--60 {
+  transform: rotateY(60deg);
+}
+
+.css-globe__ring--120 {
+  transform: rotateY(120deg);
+}
+
+.css-globe__ring--equator {
+  border-color: var(--color-accent);
+  transform: rotateX(90deg);
+}
+
+.css-logo {
+  position: absolute;
+  width: var(--logo);
+  height: var(--logo);
+  margin: calc(var(--logo) / -2) 0 0 calc(var(--logo) / -2);
+  transition: transform .3s var(--ease-out);
+}
+
+.css-logo__float {
+  width: 100%;
+  height: 100%;
+  perspective: 400px;
+  animation: css-logo-float 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * -0.6s);
+}
+
+.css-logo__spin {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: css-logo-spin 5s linear infinite;
+  animation-delay: calc(var(--i) * -0.4s);
+}
+
+.css-logo__spin img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  backface-visibility: hidden;
+}
+
+.css-logo__spin img + img { /* back face: never seen mirrored */
+  transform: rotateY(180deg);
+}
+
+.css-logo::after {
+  content: attr(data-name);
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-bright);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, 8px);
+  transition: opacity .2s;
+}
+
+.css-logo:hover {
+  z-index: 1;
+  transform: scale(1.25);
+}
+
+.css-logo:hover .css-logo__float,
+.css-logo:hover .css-logo__spin {
+  animation-play-state: paused;
+}
+
+.css-logo:hover::after {
+  opacity: 1;
+}
+
+.skills__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.skills__chip {
+  padding: 8px 12px;
+  border: 1px solid var(--color-gray-850);
+  color: var(--color-gray-300);
+}
+
+@media (max-width: 720px) {
+  .skills__inner {
+    padding-block: 96px;
   }
-  
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-    gap: 1rem;
+
+  .skills__tab {
+    padding: 0 18px;
   }
-  
-  .skill-item {
-    padding: 0.8rem;
+
+  .skills__stage {
+    height: 460px;
   }
-  
-  .skill-icon {
-    width: 40px;
-    height: 40px;
+
+  .skills__orbit {
+    scale: .6;
   }
-  
-  .skills-title {
-    font-size: 2rem;
+
+  .css-skills {
+    --logo: 42px;
+    --orbit-x: calc(50% - 36px);
+    --orbit-y: min(175px, 50% - 36px);
   }
-  
-  .skills-intro {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+
+  .css-globe {
+    transform: scale(.8);
   }
+
+  .skills__core-label {
+    top: calc(50% + 80px);
+  }
+}
+
+@keyframes skills-orbit {
+  from { transform: rotateX(68deg) rotateZ(0deg); }
+  to { transform: rotateX(68deg) rotateZ(360deg); }
+}
+
+@keyframes skills-wipe-ltr {
+  from { left: 0%; opacity: 1; }
+  to { left: 100%; opacity: 0; }
+}
+
+@keyframes skills-wipe-rtl {
+  from { left: 100%; opacity: 1; }
+  to { left: 0%; opacity: 0; }
+}
+
+@keyframes css-globe-spin {
+  from { transform: rotateX(20deg) rotateY(0deg); }
+  to { transform: rotateX(20deg) rotateY(360deg); }
+}
+
+@keyframes css-logo-float {
+  0%, 100% { transform: translateY(-6px); }
+  50% { transform: translateY(6px); }
+}
+
+@keyframes css-logo-spin {
+  to { transform: rotateY(360deg); }
 }

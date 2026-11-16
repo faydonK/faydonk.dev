@@ -14,7 +14,17 @@ dist-ssr
 nginx.conf
 *.local
 
+# Environment variables (none used today; never commit secrets)
+.env
+.env.*
+
+# Vercel CLI link (project id), TypeScript incremental info
+.vercel
+*.tsbuildinfo
+
 # Editor directories and files
+.vscode/*
+!.vscode/extensions.json
 .idea
 .DS_Store
 *.suo
@@ -25,6 +35,7 @@ nginx.conf
 
 # For Agents IA tools
 .agents
+.claude/
 agents.md
 CLAUDE.md
 GLAW.md
@@ -32,3 +43,5 @@ GLAW.md
 
 # Personnal
 graphify-out
+scripts/
+archive

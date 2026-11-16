@@ -1,0 +1,29 @@
+.intro__bracket {
+  --w: 3px; /* stroke: 3px on the loader → 2px on the frame */
+  position: fixed;
+  z-index: 101;
+  border: 0 solid var(--color-bright);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro__bracket--tl {
+  border-top-width: var(--w);
+  border-left-width: var(--w);
+}
+
+.intro__bracket--tr {
+  border-top-width: var(--w);
+  border-right-width: var(--w);
+}
+
+.intro__bracket--bl {
+  border-bottom-width: var(--w);
+  border-left-width: var(--w);
+}
+
+.intro__bracket--br {
+  border-bottom-width: var(--w);
+  border-right-width: var(--w);
+}

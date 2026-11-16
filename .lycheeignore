@@ -1,0 +1,2 @@
+# Outlook's "new message" link (src/data/mail.ts) answers 417 to link checkers; it works in browsers.
+^https://outlook\.live\.com/mail/deeplink/compose

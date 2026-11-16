@@ -1,88 +1,44 @@
-import React, { useEffect, useState } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import LanguageMenu from '../LanguageMenu/LanguageMenu';
 import { useLanguage } from '../../hooks/useLanguage';
+import { SITE } from '../../data/site';
 import './Header.css';
 
-const SCROLL_THRESHOLD = 40;
+const SECTIONS = ['about', 'skills', 'projects'] as const;
 
-const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+const Header = () => {
   const { t } = useTranslation();
-  const { currentLanguage, changeLanguage } = useLanguage();
-
-  useEffect(() => {
-    const onScroll = () => {
-      setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
-    };
-
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  const handleLanguageChange = () => {
-    const newLang = currentLanguage === 'en' ? 'fr' : 'en';
-    changeLanguage(newLang);
-  };
+  const { currentLanguage } = useLanguage();
+  const home = `/${currentLanguage}`;
 
   return (
-    <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
-      <div className="container">
-        <nav className="nav">
-          <a className="nav-brand" href={`/${currentLanguage}#`}>
-            faydonk.dev
-          </a>
-          
-          <div className="nav-center desktop-only">
-            <a href="mailto:hello@faydonk.dev" className="nav-email">
-              hello@faydonk.dev
-            </a>
-          </div>
-          <div className="nav-links desktop-only">
-            <a href="#about" className="nav-link">{t('nav.about')}</a>
-            <a href="#skills" className="nav-link">{t('nav.skills')}</a>
-            <a href="#projects" className="nav-link">{t('nav.projects')}</a>
-            <button 
-              onClick={handleLanguageChange}
-              className="lang-switcher"
-              title="Change language"
-            >
-              <Globe size={18} />
-              <span>{currentLanguage === 'en' ? 'FR' : 'EN'}</span>
-            </button>
-          </div>
+    <header className="header container">
+      <Link className="header__brand" to={{ pathname: home, hash: '#top' }}>
+        <span className="header__logo" aria-hidden="true">
+          <svg className="header__logo-arc" viewBox="0 0 30 30">
+            <circle cx="15" cy="15" r="13" />
+          </svg>
+          <svg className="header__logo-sight" viewBox="0 0 30 30">
+            <circle cx="15" cy="15" r="10" />
+            <path d="M15 2v6M15 22v6M2 15h6M22 15h6" />
+          </svg>
+        </span>
+        {SITE.domain}
+      </Link>
 
-          <button className="mobile-menu-button mobile-only" onClick={toggleMenu}>
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+      <span className="header__tag">[ {SITE.email} ]</span>
 
-          <div className={`mobile-nav ${isMenuOpen ? 'mobile-nav-open' : ''}`}>
-            <a href="mailto:hello@faydonk.dev" className="nav-email mobile-nav-item" onClick={closeMenu}>
-              hello@faydonk.dev
-            </a>
-            <a href="#about" className="nav-link mobile-nav-item" onClick={closeMenu}>{t('nav.about')}</a>
-            <a href="#skills" className="nav-link mobile-nav-item" onClick={closeMenu}>{t('nav.skills')}</a>
-            <a href="#projects" className="nav-link mobile-nav-item" onClick={closeMenu}>{t('nav.projects')}</a>
-            <button 
-              onClick={() => { handleLanguageChange(); closeMenu(); }}
-              className="lang-switcher mobile-nav-item"
-            >
-              <Globe size={18} />
-              <span>{currentLanguage === 'en' ? 'FR' : 'EN'}</span>
-            </button>
-          </div>
-        </nav>
-      </div>
+      <nav className="header__nav" aria-label={t('nav.label')}>
+        {SECTIONS.map((section) => (
+          <Link key={section} className="btn btn--bare" to={{ pathname: home, hash: `#${section}` }}>
+            <span aria-hidden="true">[</span>
+            {t(`nav.${section}`)}
+            <span aria-hidden="true">]</span>
+          </Link>
+        ))}
+        <LanguageMenu />
+      </nav>
     </header>
   );
 };

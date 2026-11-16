@@ -1,32 +1,47 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../../hooks/useLanguage';
-import { GithubIcon, TwitterIcon } from '../../assets/icons';
+import { useMailPicker } from '../MailPicker/MailPickerContext';
+import { SITE } from '../../data/site';
 import './Footer.css';
 
-const Footer: React.FC = () => {
+const Footer = () => {
+  const { t } = useTranslation();
   const { currentLanguage } = useLanguage();
+  const openMail = useMailPicker();
 
   return (
     <footer className="footer">
-      <div className="container">
-        <div className="footer-content">
-          <div className="footer-brand">
-            faydonK
-            <div className="footer-copyright">
-              © 2025 All rights reserved
-            </div>
-          </div>
-          <div className="footer-center">
-            <a href={`/${currentLanguage}/terms`} className="footer-link">Terms</a>
-          </div>
-          <div className="footer-social">
-            <a href="https://github.com/faydonk" className="social-link" target="_blank" rel="noopener noreferrer">
-              <GithubIcon size={45} />
+      <div className="footer__inner container">
+        <p className="footer__kicker">{t('footer.kicker')}</p>
+        <a className="footer__email" href={`mailto:${SITE.email}`} onClick={openMail}>
+          {SITE.email}
+        </a>
+
+        <div className="footer__links">
+          {SITE.socials.map((social) => (
+            <a
+              key={social.url}
+              className="btn btn--quiet btn--small"
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">[</span>
+              {social.label}
+              <span aria-hidden="true">]</span>
             </a>
-            <a href="https://twitter.com/faydonkwin" className="social-link" target="_blank" rel="noopener noreferrer">
-              <TwitterIcon size={45} />
-            </a>
-          </div>
+          ))}
+        </div>
+
+        <div className="footer__bar">
+          <span>
+            {SITE.name} © {new Date().getFullYear()}
+          </span>
+          <Link className="footer__terms" to={`/${currentLanguage}/terms`}>
+            {t('footer.terms')}
+          </Link>
+          <span>{t('footer.end')}</span>
         </div>
       </div>
     </footer>
