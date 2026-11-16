@@ -1,12 +1,20 @@
 version: 2
 updates:
-- package-ecosystem: bundler
+- package-ecosystem: npm
   directory: "/"
   schedule:
-    interval: daily
+    interval: weekly
   open-pull-requests-limit: 10
+  groups:
+    three:
+      patterns:
+        - "three"
+        - "@types/three"
+        - "@react-three/*"
+        - "three-stdlib"
+        - "camera-controls"
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
-    interval: daily
+    interval: weekly
   open-pull-requests-limit: 10

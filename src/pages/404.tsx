@@ -1,22 +1,27 @@
-import React from 'react';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import Corners from '../components/Corners/Corners';
+import { useLanguage } from '../hooks/useLanguage';
 import './404.css';
 
-const NotFound: React.FC = () => {
+const NotFound = () => {
+  const { t } = useTranslation();
+  const { currentLanguage } = useLanguage();
+
   return (
-    <>
-      <Header />
-      <div className="not-found-page">
-        <div style={{ height: '71px' }}></div>
-        <section id="card">
-          <h1>404</h1>
-          <p className="error-message">Page Not Found</p>
-          <p><a href="/">Return Home</a></p>
-        </section>
+    <section className="not-found container" aria-labelledby="not-found-title">
+      <div className="not-found__frame">
+        <Corners />
+        <p className="not-found__kicker">{t('notFound.kicker')}</p>
+        <h1 id="not-found-title" className="not-found__code">
+          {t('notFound.title')}
+        </h1>
+        <p className="not-found__message">{t('notFound.message')}</p>
+        <Link className="btn" to={`/${currentLanguage}`}>
+          {t('notFound.returnHome')}
+        </Link>
       </div>
-      <Footer />
-    </>
+    </section>
   );
 };
 

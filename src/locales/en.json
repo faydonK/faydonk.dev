@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "label": "Main navigation",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "language": "Language"
+  },
+  "loader": {
+    "label": "Loading faydonk.dev",
+    "sector": "SECTOR 07 · PARIS",
+    "signal": "SIGNAL",
+    "acquiring": "ACQUIRING TARGET…",
+    "locked": "TARGET LOCKED — faydonK",
+    "mode": "MODE · ACQUIRE"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "description": "French passionate junior developer creating some random stuff. I like making apps with new tech and bringing creative ideas to life through code.",
+    "ctaProjects": "SCAN PROJECTS",
+    "ctaContact": "OPEN CHANNEL",
+    "locked": "TARGET LOCKED",
+    "callouts": {
+      "origin": "ORIGIN · FR",
+      "class": "CLASS · JUNIOR DEV"
+    }
+  },
+  "about": {
+    "kicker": "// LOG FILE 01",
+    "title": "About",
+    "timeline": {
+      "age16": {
+        "tag": "AGE 16",
+        "text": "Got interested in dev. First goal: making Discord bots."
+      },
+      "error": {
+        "tag": "ERROR",
+        "text": "Turns out it wasn’t as simple as I thought — moved to web development, started, then quickly stopped."
+      },
+      "reboot": {
+        "tag": "REBOOT",
+        "text": "Since AI arrived, I understood it’s a very powerful tool for learning."
+      },
+      "fuel": {
+        "tag": "FUEL",
+        "text": "Seeing the ideas in my head come to life gives me a dose of adrenaline."
+      },
+      "now": {
+        "tag": "NOW",
+        "text": "I keep building projects in my corner. Freelancing tempts me, but studies come first."
+      }
+    },
+    "ps": "ps: I still use AI to help me ;)"
+  },
+  "skills": {
+    "kicker": "// SYSTEM SCAN",
+    "title": "What I Use",
+    "tablist": "Skill categories",
+    "tabs": {
+      "tech": "TECHNOLOGIES",
+      "tools": "TOOLS"
+    }
+  },
+  "projects": {
+    "kicker": "// TARGETS ACQUIRED: {{count}}",
+    "title": "My Projects",
+    "layoutFeatured": "LAYOUT · FEATURED",
+    "layoutFeaturedGrid": "LAYOUT · FEATURED + GRID",
+    "featured": "FEATURED · {{index}}"
+  },
+  "mail": {
+    "title": "OPEN A CHANNEL",
+    "close": "Close",
+    "newTab": "opens in a new tab",
+    "app": "opens your mail app"
+  },
+  "footer": {
+    "kicker": "// OPEN A CHANNEL",
+    "terms": "Terms",
+    "end": "END OF TRANSMISSION"
+  },
+  "notFound": {
+    "kicker": "// SIGNAL LOST",
+    "title": "404",
+    "message": "Page Not Found",
+    "returnHome": "Return Home"
+  },
+  "terms": {
+    "kicker": "// LEGAL",
+    "title": "Terms of Service",
+    "hosting": {
+      "title": "Hosting Information",
+      "content": "This website is hosted on Vercel, a cloud platform for static sites and serverless functions. Vercel provides the infrastructure and content delivery network (CDN) for this portfolio."
+    },
+    "content": {
+      "title": "Content",
+      "text": "All content on this website, including but not limited to text, images, and code examples, is the property of faydonK unless otherwise stated."
+    },
+    "privacy": {
+      "title": "Privacy",
+      "text": "This website does not collect personal information. Any analytics or tracking is handled by Vercel's standard hosting services. See Vercel",
+      "link": "privacy policy",
+      "textEnd": "for more details."
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "For any questions regarding these terms, please contact through this email"
+    },
+    "backHome": "← Back to Home"
+  }
+}

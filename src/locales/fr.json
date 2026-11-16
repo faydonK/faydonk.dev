@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "label": "Navigation principale",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "language": "Langue"
+  },
+  "loader": {
+    "label": "Chargement de faydonk.dev",
+    "sector": "SECTEUR 07 · PARIS",
+    "signal": "SIGNAL",
+    "acquiring": "ACQUISITION DE LA CIBLE…",
+    "locked": "CIBLE VERROUILLÉE — faydonK",
+    "mode": "MODE · ACQUISITION"
+  },
+  "hero": {
+    "greeting": "Salut, moi c'est",
+    "description": "Développeur junior français passionné, je crée des trucs un peu au hasard. J'aime faire des applis avec les nouvelles technos et donner vie à des idées créatives grâce au code.",
+    "ctaProjects": "SCANNER LES PROJETS",
+    "ctaContact": "OUVRIR UN CANAL",
+    "locked": "CIBLE VERROUILLÉE",
+    "callouts": {
+      "origin": "ORIGINE · FR",
+      "class": "CLASSE · DEV JUNIOR"
+    }
+  },
+  "about": {
+    "kicker": "// FICHIER LOG 01",
+    "title": "À propos",
+    "timeline": {
+      "age16": {
+        "tag": "16 ANS",
+        "text": "Je m'intéresse au dev. Premier objectif : créer des bots Discord."
+      },
+      "error": {
+        "tag": "ERREUR",
+        "text": "Finalement, ce n'était pas aussi simple que prévu — je suis passé au développement web, j'ai commencé, puis j'ai vite arrêté."
+      },
+      "reboot": {
+        "tag": "REBOOT",
+        "text": "Avec l'arrivée de l'IA, j'ai compris que c'était un outil très puissant pour apprendre."
+      },
+      "fuel": {
+        "tag": "CARBURANT",
+        "text": "Voir les idées que j'ai en tête prendre vie me donne une bonne dose d'adrénaline."
+      },
+      "now": {
+        "tag": "MAINTENANT",
+        "text": "Je continue à construire des projets dans mon coin. Le freelance me tente, mais les études passent avant."
+      }
+    },
+    "ps": "ps : j'utilise encore l'IA pour m'aider ;)"
+  },
+  "skills": {
+    "kicker": "// SCAN SYSTÈME",
+    "title": "Ce que j'utilise",
+    "tablist": "Catégories de compétences",
+    "tabs": {
+      "tech": "TECHNOLOGIES",
+      "tools": "OUTILS"
+    }
+  },
+  "projects": {
+    "kicker": "// CIBLES ACQUISES : {{count}}",
+    "title": "Mes Projets",
+    "layoutFeatured": "AFFICHAGE · À LA UNE",
+    "layoutFeaturedGrid": "AFFICHAGE · À LA UNE + GRILLE",
+    "featured": "À LA UNE · {{index}}"
+  },
+  "mail": {
+    "title": "OUVRIR UN CANAL",
+    "close": "Fermer",
+    "newTab": "s'ouvre dans un nouvel onglet",
+    "app": "ouvre l'application mail"
+  },
+  "footer": {
+    "kicker": "// OUVRIR UN CANAL",
+    "terms": "Conditions",
+    "end": "FIN DE TRANSMISSION"
+  },
+  "notFound": {
+    "kicker": "// SIGNAL PERDU",
+    "title": "404",
+    "message": "Page introuvable",
+    "returnHome": "Retour à l'accueil"
+  },
+  "terms": {
+    "kicker": "// MENTIONS",
+    "title": "Conditions d'utilisation",
+    "hosting": {
+      "title": "Informations d'hébergement",
+      "content": "Ce site web est hébergé sur Vercel, une plateforme cloud pour sites statiques et fonctions serverless. Vercel fournit l'infrastructure et le réseau de diffusion de contenu (CDN) pour ce portfolio."
+    },
+    "content": {
+      "title": "Contenu",
+      "text": "Tout le contenu de ce site web, incluant mais non limité au texte, images et exemples de code, est la propriété de faydonK sauf mention contraire."
+    },
+    "privacy": {
+      "title": "Confidentialité",
+      "text": "Ce site ne collecte pas d'informations personnelles. Toute analyse ou suivi est géré par les services d'hébergement standard de Vercel. Voir la",
+      "link": "politique de confidentialité",
+      "textEnd": "de Vercel pour plus de détails."
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "Pour toute question concernant ces conditions, veuillez contacter par email"
+    },
+    "backHome": "← Retour à l'accueil"
+  }
+}

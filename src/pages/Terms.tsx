@@ -1,55 +1,60 @@
-import React from 'react';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import Corners from '../components/Corners/Corners';
+import SectionHeading from '../components/SectionHeading/SectionHeading';
+import { useMailPicker } from '../components/MailPicker/MailPickerContext';
+import { useLanguage } from '../hooks/useLanguage';
+import { SITE } from '../data/site';
 import './Terms.css';
 
-const Terms: React.FC = () => {
+const Terms = () => {
+  const { t } = useTranslation();
+  const openMail = useMailPicker();
+  const { currentLanguage } = useLanguage();
+
   return (
-    <>
-      <Header />
-      <div className="terms-page">
-        <div style={{ height: '71px' }}></div>
-        <div className="container">
-          <div className="terms-content">
-            <h1>Terms of Service</h1>
-            
-            <section>
-              <h2>Hosting Information</h2>
-              <p>
-                This website is hosted on Vercel, a cloud platform for static sites and serverless functions.
-                Vercel provides the infrastructure and content delivery network (CDN) for this portfolio.
-              </p>
-            </section>
-            
-            <section>
-              <h2>Content</h2>
-              <p>
-                All content on this website, including but not limited to text, images, and code examples,
-                is the property of faydonK unless otherwise stated.
-              </p>
-            </section>
-            
-            <section>
-              <h2>Privacy</h2>
-              <p>
-                This website does not collect personal information. Any analytics or tracking
-                is handled by Vercel's standard hosting services. See Vercel <a href="https://vercel.com/legal/privacy-policy">privacy policy</a> for more details.
-              </p>
-            </section>
-            
-            <section>
-              <h2>Contact</h2>
-              <p>
-                For any questions regarding these terms, please contact through this email <a href="mailto:hello@faydonk.dev">hello@faydonk.dev</a>
-              </p>
-            </section>
-            
-            <a href="/" className="back-link">← Back to Home</a>
-          </div>
+    <section className="terms container" aria-labelledby="terms-title">
+      <div className="terms__frame">
+        <Corners />
+        <SectionHeading as="h1" id="terms-title" kicker={t('terms.kicker')} title={t('terms.title')} />
+
+        <div className="terms__blocks">
+          <section className="terms__block">
+            <h2>{t('terms.hosting.title')}</h2>
+            <p>{t('terms.hosting.content')}</p>
+          </section>
+
+          <section className="terms__block">
+            <h2>{t('terms.content.title')}</h2>
+            <p>{t('terms.content.text')}</p>
+          </section>
+
+          <section className="terms__block">
+            <h2>{t('terms.privacy.title')}</h2>
+            <p>
+              {t('terms.privacy.text')}{' '}
+              <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
+                {t('terms.privacy.link')}
+              </a>{' '}
+              {t('terms.privacy.textEnd')}
+            </p>
+          </section>
+
+          <section className="terms__block">
+            <h2>{t('terms.contact.title')}</h2>
+            <p>
+              {t('terms.contact.text')} <a href={`mailto:${SITE.email}`} onClick={openMail}>
+                {SITE.email}
+              </a>
+            </p>
+          </section>
         </div>
+
+        <Link className="btn terms__back" to={`/${currentLanguage}`}>
+          {t('terms.backHome')}
+        </Link>
       </div>
-      <Footer />
-    </>
+    </section>
   );
 };
 

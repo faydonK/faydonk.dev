@@ -1,36 +1,36 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from 'react';
 
 export const useTypewriter = (
-    texts: string[],
-    speed: number = 550,
-    deleteSpeed: number = 220, 
-    delayBetweenTexts: number = 3000
+  texts: readonly string[],
+  typeSpeed = 550, // ms per typed character
+  deleteSpeed = 220, // ms per deleted character
+  pause = 3000 // ms with the whole text shown
 ) => {
-    const [displayText, setDisplayText] = useState("");
-    const [textIndex, setTextIndex] = useState(0);
-    const [isDeleting, setIsDeleting] = useState(false);
-    const [charIndex, setCharIndex] = useState(0);
+  const [index, setIndex] = useState(0);
+  const [length, setLength] = useState(0);
+  const [deleting, setDeleting] = useState(false);
 
-   useEffect(() => {
-    const currentText = texts[textIndex];
-    
-    const timeout = setTimeout(() => {
-      if (!isDeleting && charIndex < currentText.length) {
-        setDisplayText(currentText.substring(0, charIndex + 1));
-        setCharIndex(charIndex + 1);
-      } else if (isDeleting && charIndex > 0) {
-        setDisplayText(currentText.substring(0, charIndex - 1));
-        setCharIndex(charIndex - 1);
-      } else if (!isDeleting && charIndex === currentText.length) {
-        setTimeout(() => setIsDeleting(true), delayBetweenTexts);
-      } else if (isDeleting && charIndex === 0) {
-        setIsDeleting(false);
-        setTextIndex((textIndex + 1) % texts.length);
-      }
-    }, isDeleting ? deleteSpeed : speed);
+  const current = texts[index % texts.length] ?? '';
 
-    return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, textIndex, texts, speed, deleteSpeed, delayBetweenTexts]);
+  useEffect(() => {
+    let delay = deleting ? deleteSpeed : typeSpeed;
+    let step: () => void;
 
-  return displayText;
+    if (!deleting && length === current.length) {
+      delay = pause;
+      step = () => setDeleting(true);
+    } else if (deleting && length === 0) {
+      step = () => {
+        setDeleting(false);
+        setIndex((i) => (i + 1) % texts.length);
+      };
+    } else {
+      step = () => setLength((l) => l + (deleting ? -1 : 1));
+    }
+
+    const timeout = window.setTimeout(step, delay);
+    return () => window.clearTimeout(timeout);
+  }, [current, length, deleting, texts.length, typeSpeed, deleteSpeed, pause]);
+
+  return current.slice(0, length);
 };

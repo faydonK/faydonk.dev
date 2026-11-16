@@ -10,7 +10,17 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.htaccess
+nginx.conf
 *.local
+
+# Environment variables (none used today; never commit secrets)
+.env
+.env.*
+
+# Vercel CLI link (project id), TypeScript incremental info
+.vercel
+*.tsbuildinfo
 
 # Editor directories and files
 .vscode/*
@@ -23,5 +33,15 @@ dist-ssr
 *.sln
 *.sw?
 
-# Other
-info.md
+# For Agents IA tools
+.agents
+.claude/
+agents.md
+CLAUDE.md
+GLAW.md
+
+
+# Personnal
+graphify-out
+scripts/
+archive

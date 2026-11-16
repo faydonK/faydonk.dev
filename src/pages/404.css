@@ -1,50 +1,38 @@
-.not-found-page {
-  display: flex;
-  min-height: 100vh;
-  margin: auto;
-  background: #000000;
-  color: #FFFFFF;
+.not-found {
+  padding-block: 24px 120px;
+}
+
+.not-found__frame {
   position: relative;
-}
-
-.not-found-page section#card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 60vh;
+  padding: clamp(32px, 5vw, 72px);
+  border: 1px solid var(--color-gray-950);
   text-align: center;
-  margin: auto;
 }
 
-.not-found-page h1 {
+.not-found__kicker {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-accent);
+}
+
+.not-found__code {
+  font-size: clamp(96px, 18vw, 220px);
   font-weight: 700;
-  font-size: 8rem;
-  margin: 0 0 2rem 0;
-  color: #FFFFFF;
+  line-height: .85;
+  letter-spacing: -0.06em;
+  color: var(--color-bright);
 }
 
-.not-found-page .error-message {
-  font-size: 1.5rem;
-  color: #CCCCCC;
-  margin-bottom: 2rem;
-}
-
-.not-found-page a {
-  color: #FFFFFF;
-  text-decoration: none;
-  padding: 1rem 2rem;
-  border: 1px solid #FFFFFF;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.not-found-page a:hover {
-  background: #FFFFFF;
-  color: #000000;
-}
-
-@media (max-width: 768px) {
-  .not-found-page h1 {
-    font-size: 6rem;
-  }
-  
-  .not-found-page .error-message {
-    font-size: 1.2rem;
-  }
+.not-found__message {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--color-gray-400);
 }

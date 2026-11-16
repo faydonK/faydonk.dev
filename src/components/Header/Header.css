@@ -1,166 +1,108 @@
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #333333;
-  z-index: 1000;
-  transition: all 0.3s ease;
-}
-
-.nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  gap: 16px;
+  padding-block: 22px;
+  font-family: var(--font-mono);
+}
+
+.header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.header__logo {
   position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
 }
 
-.nav-brand {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #FFFFFF;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-brand:hover {
-  color: #CCCCCC;
-}
-
-.nav-center {
+.header__logo svg {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  inset: 0;
+  width: 30px;
+  height: 30px;
+  fill: none;
 }
 
-.nav-email {
-  color: #CCCCCC;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
+.header__logo-arc {
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  stroke-dasharray: 14 68;
+  animation: header-spin 7s linear infinite;
 }
 
-.nav-email:hover {
-  color: #FFFFFF;
+.header__logo-sight {
+  stroke: currentColor;
+  stroke-width: 1.6;
+  animation: header-spin 16s linear infinite reverse;
 }
 
-.nav-links {
-  display: flex;
-  gap: 2rem;
+.header__logo-sight circle {
+  stroke-dasharray: 10 5;
 }
 
-.nav-link {
-  text-decoration: none;
-  color: #CCCCCC;
-  font-weight: 400;
-  transition: color 0.3s ease;
-  position: relative;
-  padding-bottom: 5px;
+.header__tag {
+  font-size: 12px;
+  color: var(--color-gray-600);
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: #FFFFFF;
-  transition: width 0.3s ease;
+@media (min-width: 1101px) {
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .header__brand {
+    justify-self: start;
+  }
+
+  .header__nav {
+    justify-self: end;
+  }
 }
 
-.nav-link:hover {
-  color: #FFFFFF;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-/* Mobile styles */
-.mobile-menu-button {
-  display: none;
-  background: none;
-  border: none;
-  color: #FFFFFF;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.mobile-menu-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.mobile-nav {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.98);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #333333;
-  flex-direction: column;
-  padding: 1rem 0;
-  transform: translateY(-10%);
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-
-.mobile-nav-open {
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible;
-}
-
-.mobile-nav-item {
-  padding: 0.8rem 1rem;
-  text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.mobile-nav-item:last-child {
-  border-bottom: none;
-}
-
-.desktop-only {
-  display: flex;
-}
-
-.mobile-only {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .desktop-only {
+@media (max-width: 1100px) {
+  .header__tag {
     display: none;
   }
-  
-  .mobile-only {
-    display: block;
+}
+
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.header__nav .btn {
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .header__nav {
+    gap: 0;
+    margin-inline: -8px;
   }
-  
-  .mobile-nav {
-    display: flex;
-  }
-  
-  .nav-brand {
-    font-size: 1.3rem;
+
+  .header__nav .btn {
+    padding-inline: 8px;
   }
 }
 
-@media (max-width: 480px) {
-  .nav-brand {
-    font-size: 1.2rem;
+@media (max-width: 380px) {
+  .header__nav .btn {
+    font-size: 12px;
   }
-  
-  .mobile-nav-item {
-    padding: 0.7rem 1rem;
-    font-size: 0.9rem;
-  }
+}
+
+@keyframes header-spin {
+  to { transform: rotate(360deg); }
 }
